@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Music Player</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <main class="app">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div>
+                <p class="small-title">NOW PLAYING</p>
+                <h1>Music Player</h1>
+            </div>
+
+            <button
+                id="theme-btn"
+                class="icon-btn"
+                type="button"
+                aria-label="Toggle theme"
+            >
+                🌙
+            </button>
+
+        </header>
+
+
+        <!-- Search -->
+
+        <section class="search-section">
+
+            <input
+                type="search"
+                id="search-input"
+                placeholder="Search songs or artists..."
+                autocomplete="off"
+            >
+
+        </section>
+
+
+        <!-- Player -->
+
+        <section class="player-card">
+
+            <div class="album-art">
+
+                <img
+                    id="cover-image"
+                    src="images/cover1.jpg"
+                    alt="Album cover"
+                >
+
+            </div>
+
+
+            <div class="song-info">
+
+                <h2 id="song-title">
+                    Select a song
+                </h2>
+
+                <p id="artist-name">
+                    Artist
+                </p>
+
+            </div>
+
+
+            <!-- Progress -->
+
+            <div class="progress-section">
+
+                <span id="current-time">
+                    0:00
+                </span>
+
+                <input
+                    type="range"
+                    id="progress-bar"
+                    min="0"
+                    max="100"
+                    value="0"
+                >
+
+                <span id="duration">
+                    0:00
+                </span>
+
+            </div>
+
+
+            <!-- Main Controls -->
+
+            <div class="player-controls">
+
+                <button
+                    id="shuffle-btn"
+                    class="control-btn"
+                    type="button"
+                    aria-label="Shuffle"
+                >
+                    🔀
+                </button>
+
+                <button
+                    id="previous-btn"
+                    class="control-btn"
+                    type="button"
+                    aria-label="Previous song"
+                >
+                    ⏮
+                </button>
+
+                <button
+                    id="play-btn"
+                    class="play-btn"
+                    type="button"
+                    aria-label="Play"
+                >
+                    ▶
+                </button>
+
+                <button
+                    id="next-btn"
+                    class="control-btn"
+                    type="button"
+                    aria-label="Next song"
+                >
+                    ⏭
+                </button>
+
+                <button
+                    id="repeat-btn"
+                    class="control-btn"
+                    type="button"
+                    aria-label="Repeat"
+                >
+                    🔁
+                </button>
+
+            </div>
+
+
+            <!-- Volume -->
+
+            <div class="volume-section">
+
+                <span>🔊</span>
+
+                <input
+                    type="range"
+                    id="volume-bar"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value="1"
+                >
+
+            </div>
+
+
+            <!-- Favorite -->
+
+            <button
+                id="favorite-btn"
+                class="favorite-btn"
+                type="button"
+            >
+                ♡ Add to Favorites
+            </button>
+
+        </section>
+
+
+        <!-- Playlist -->
+
+        <section class="playlist-section">
+
+            <div class="section-header">
+
+                <h2>Playlist</h2>
+
+                <span id="song-count">
+                    0 songs
+                </span>
+
+            </div>
+
+            <ul id="playlist"></ul>
+
+        </section>
+
+
+        <!-- Recently Played -->
+
+        <section class="history-section">
+
+            <div class="section-header">
+
+                <h2>Recently Played</h2>
+
+                <button
+                    id="clear-history-btn"
+                    type="button"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+            <ul id="history-list"></ul>
+
+            <p
+                id="empty-history"
+                class="empty-message"
+            >
+                No recently played songs.
+            </p>
+
+        </section>
+
+
+        <!-- Favorites -->
+
+        <section class="favorites-section">
+
+            <div class="section-header">
+
+                <h2>Favorites</h2>
+
+                <span id="favorite-count">
+                    0
+                </span>
+
+            </div>
+
+            <ul id="favorites-list"></ul>
+
+            <p
+                id="empty-favorites"
+                class="empty-message"
+            >
+                No favorite songs yet.
+            </p>
+
+        </section>
+
+
+        <!-- Audio -->
+
+        <audio id="audio-player"></audio>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
